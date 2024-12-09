@@ -1,15 +1,14 @@
 import Vue from 'vue'
-import { createPinia, PiniaVuePlugin } from 'pinia'
-
 import App from './App.vue'
-import router from './router'
-
-import './assets/main.css'
-
-Vue.use(PiniaVuePlugin)
-
+import vuetify from './plugins/vuetify'
+import router from "@/router"
+import axios from 'axios'
+import store from './plugins/store'
+Vue.config.productionTip = false
+Vue.prototype.axios=axios
 new Vue({
+  vuetify,
   router,
-  pinia: createPinia(),
-  render: (h) => h(App)
+  store,
+  render: h => h(App)
 }).$mount('#app')
