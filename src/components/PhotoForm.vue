@@ -13,19 +13,19 @@ export default{
         title:'',
         img:''
     }),
-    // methods:{
-    //     addPhoto(){
-    //         const reader = new FileReader()
-    //         reader.onload=()=>{
-    //             let photo ={
-    //                 id:Date.now(),
-    //                 title:this.title,
-    //                 url:reader.result
-    //             }
-    //             this.$emit('addPhoto',photo)
-    //         }
-    //         reader.readAsDataURL(this.img)
-    //     }
-    // }
+    methods:{
+        addPhoto(){
+            const reader = new FileReader()
+            reader.onload=()=>{
+                let photo ={
+                    id:Date.now(),
+                    title:this.title,
+                    url:reader.result
+                }
+                this.$emit('addPhoto',photo)
+            }
+            reader.readAsDataURL(this.img)
+        }
+    }
 }</script>
 <style></style>

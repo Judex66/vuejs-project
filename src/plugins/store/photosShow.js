@@ -1,9 +1,9 @@
 import axios from "axios"
 
 export default{
-    state:{
-        photos:[]
-    },
+    state: {
+        photo: []
+      },
     mutations:{
         setPhotos(state,payloads){
             state.photo=payloads
