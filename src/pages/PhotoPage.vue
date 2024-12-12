@@ -7,21 +7,26 @@
       v-for="photo in photos"
       :key="photo.id"
       :photo="photo"
+      @openPopup="openPopup"
       />
    
     </v-row>
+    <PopupShow :photo="currentpopup" v-model="popupVisible"/>
    </v-container>
   </template>
   <script>
   import ThePhoto from '@/components/ThePhoto.vue';
    import PhotoForm from '@/components/PhotoForm.vue';
+import PopupShow from '@/components/PopupShow.vue';
  //import axios from 'axios';
  export default{
   components:{
-    ThePhoto, PhotoForm
+    ThePhoto, PhotoForm, PopupShow
   },
   data: () => ({
-    photos: []
+    photos: [],
+    currentpopup:{},
+    popupVisible:false
   }),
   mounted(){
    // this.$store.dispatch('fetchPhotos')
@@ -34,6 +39,11 @@
         },
         addPhoto(photo){
 this.photos.push(photo)
+        },
+        openPopup(photo){
+          
+this.currentpopup=photo
+this.popupVisible=true
         }
   }
  }
