@@ -4,7 +4,7 @@
      <PhotoForm @addPhoto="addPhoto"/>
     <v-row>
       <ThePhoto
-      v-for="photo in photos"
+      v-for="photo in $store.getters.getAllPhotos"
       :key="photo.id"
       :photo="photo"
       @openPopup="openPopup"
@@ -29,14 +29,14 @@ import PopupShow from '@/components/PopupShow.vue';
     popupVisible:false
   }),
   mounted(){
-   // this.$store.dispatch('fetchPhotos')
-     this.fetchPhotos()
+    this.$store.dispatch('fetchPhotos')
+    // this.fetchPhotos()
   },
   methods:{
-    fetchPhotos(){
-            this.axios.get('https://jsonplaceholder.typicode.com/photos?_limit=20')
-            .then(response=>this.photos=response.data)
-        },
+    // fetchPhotos(){
+    //         this.axios.get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+    //         .then(response=>this.photos=response.data)
+    //     },
         addPhoto(photo){
 this.photos.push(photo)
         },

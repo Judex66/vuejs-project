@@ -2,15 +2,15 @@ import axios from "axios"
 
 export default{
     state: {
-        photo: []
+        photos: []
       },
     mutations:{
         setPhotos(state,payloads){
-            state.photo=payloads
+            state.photos=payloads
         }
     },
     getters:{
-        getPhotos(state){
+        getAllPhotos(state){
             return state.photos
         }
     },
