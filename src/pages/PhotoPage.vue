@@ -1,5 +1,5 @@
 <template>
-   <v-container>
+   <v-container fluid >
     photo
      <PhotoForm @addPhoto="addPhoto"/>
     <v-row>
@@ -34,7 +34,7 @@ import PopupShow from '@/components/PopupShow.vue';
   },
   methods:{
     fetchPhotos(){
-            this.axios.get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+            this.axios.get('https://jsonplaceholder.typicode.com/photos?_limit=50')
             .then(response=>this.photos=response.data)
         },
         addPhoto(photo){

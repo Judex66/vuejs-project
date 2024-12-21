@@ -1,6 +1,7 @@
 <template>
- <v-col cols="4">
-<v-card @click="openPopup">
+ <v-col class="d-flex flex-lg-row
+ justify-center">
+<v-card @click="openPopup"  max-width="600">
     <v-card-title>
 {{ photo.title }}
     </v-card-title>

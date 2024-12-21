@@ -5,6 +5,7 @@
     max-width="600"
     >
     <v-card>
+        <v-btn v-on:click="deletePhoto(photo.id)">{{ photo.id }}</v-btn>
     <v-card-title>
 {{ fullTitle }}
     </v-card-title>
@@ -40,6 +41,9 @@ export default{
         },
         popupVisible(newValue){
             this.$emit('input', newValue)
+        },
+        deletePhoto(id){
+            console.log(id)
         }
     },
     computed:{
