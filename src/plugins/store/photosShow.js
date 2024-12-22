@@ -24,7 +24,11 @@ export default{
         },
         addPhoto(state, payload){
             state.photos.push(payload)
+        },
+        updateData(state,payload){
+            this.$set(state.photos.id,"age", payload)
         }
+
     },
     getters:{
         getAllPhotos(state){
