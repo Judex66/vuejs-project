@@ -12,14 +12,15 @@ export default{
         },
         showDialog(state){
             state.dialogVisible=true
-            console.log(state.dialogVisible)
+      
         },
         hideDialog(state){
         state.dialogVisible=false
-        console.log(state.dialogVisible)
+   
         },
         setCurrentPhoto(state,payload){
         state.currentPhoto=payload
+     
         },
         addPhoto(state, payload){
             state.photos.push(payload)
@@ -29,10 +30,8 @@ export default{
         getAllPhotos(state){
             return state.photos
         },
+        getCurrectPhoto:(state)=>state.currentPhoto,
         getDialogVisible:(state)=>state.dialogVisible,
-
-        getCurrectPhoto:(state)=>{state.currentPhoto
-        }
         
     },
     actions:{

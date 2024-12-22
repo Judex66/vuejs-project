@@ -7,22 +7,20 @@
     >
     <v-card>
     <v-card-title>
-{{ fullTitle }}
+{{ $store.getters.getCurrectPhoto.title }}
     </v-card-title>
     <v-card-text>
-        <v-img
-        :src="$store.getters.setCurrentPhoto.url"/>
+        <v-img 
+        :src="$store.getters.getCurrectPhoto.url"/>
     </v-card-text>
 </v-card>
     </v-dialog>
 </template>
 <script>
 export default{
-
     computed:{
         fullTitle(){
-            
-            return `Тест полного названия - ${this.$store.getters.setCurrentPhoto.title}` 
+            return `Тест полного названия - ${this.$store.getters.getCurrectPhoto.title}` 
         }
     }
 }

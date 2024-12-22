@@ -28,17 +28,10 @@ import PopupShow from '@/components/PopupShow.vue';
     this.$store.dispatch('fetchPhotos')
 
   },
-  methods:{
+  // methods:{
 
-//         addPhoto(photo){
-// this.photos.push(photo)
-//         },
-//         openPopup(photo){
-          
-// this.currentPhoto=photo
-// this.dialogVisible=true
-//         }
-  }
+
+  // }
  }
   </script>
     <style></style>
