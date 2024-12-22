@@ -1,8 +1,9 @@
 
 <template>
     <v-dialog
-    v-model="popupVisible"
+    v-model="$store.getters.getDialogVisible"
     max-width="600"
+    @click:outside="$store.commit('hideDialog')"
     >
     <v-card>
     <v-card-title>
@@ -10,41 +11,17 @@
     </v-card-title>
     <v-card-text>
         <v-img
-        :src="photo.url"/>
+        :src="$store.getters.setCurrentPhoto.url"/>
     </v-card-text>
 </v-card>
     </v-dialog>
 </template>
 <script>
 export default{
-    props:{
-        photo:{
-            type: Object,
-            required:true
-        },
-        value:{
-            type:Boolean,
-            default:false
-        }
-    },
-    create(){
-        this.popupVisible=this.value
-    },
-    data:()=>({
-        popupVisible:false
-    }),
-    watch:{
-        value(newValue){
-            this.popupVisible=newValue
-            console.log(newValue)
-        },
-        popupVisible(newValue){
-            this.$emit('input', newValue)
-        }
-    },
+
     computed:{
         fullTitle(){
-            return `Тест полного названия - ${this.photo.title}` 
+            return `Тест полного названия - ${this.$store.getters.setCurrentPhoto.title}` 
         }
     }
 }

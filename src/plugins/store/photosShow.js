@@ -2,17 +2,35 @@ import axios from "axios"
 
 export default{
     state: {
-        photos: []
+        photos: [],
+        currentPhoto:{},
+        dialogVisible:false
       },
     mutations:{
-        setPhotos(state,payloads){
-            state.photos=payloads
+        setPhotos(state,payload){
+            state.photos=payload
+        },
+        showDialog(state){
+            state.dialogVisible=true
+            
+        },
+        hideDialog(state){
+        state.dialogVisible=false
+        },
+        setCurrentPhoto(state,payload){
+        state.currentPhoto=payload
         }
     },
     getters:{
         getAllPhotos(state){
             return state.photos
+        },
+        getDialogVisible:(state)=>state.dialogVisible,
+
+        getCurrectPhoto:(state)=>{state.currentPhoto
+            
         }
+        
     },
     actions:{
         fetchPhotos(content){

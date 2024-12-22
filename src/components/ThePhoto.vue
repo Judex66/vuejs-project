@@ -22,7 +22,9 @@ export default{
     },
     methods:{
         openPopup(){
-            this.$emit('openPopup',this.photo)
+            this.$store.commit('setCurrentPhoto',this.photo)
+           this.$store.commit('showDialog')
+           console.log(`${this.photo.title}`)
         }
     }
 }

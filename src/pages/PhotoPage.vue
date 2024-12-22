@@ -7,11 +7,9 @@
       v-for="photo in $store.getters.getAllPhotos"
       :key="photo.id"
       :photo="photo"
-      @openPopup="openPopup"
       />
-   
     </v-row>
-    <PopupShow :photo="currentpopup" v-model="popupVisible"/>
+    <PopupShow/>
    </v-container>
   </template>
   <script>
@@ -24,27 +22,22 @@ import PopupShow from '@/components/PopupShow.vue';
     ThePhoto, PhotoForm, PopupShow
   },
   data: () => ({
-    photos: [],
-    currentpopup:{},
-    popupVisible:false
+    photos: []
   }),
   mounted(){
     this.$store.dispatch('fetchPhotos')
-    // this.fetchPhotos()
+
   },
   methods:{
-    // fetchPhotos(){
-    //         this.axios.get('https://jsonplaceholder.typicode.com/photos?_limit=20')
-    //         .then(response=>this.photos=response.data)
-    //     },
+
         addPhoto(photo){
 this.photos.push(photo)
         },
-        openPopup(photo){
+//         openPopup(photo){
           
-this.currentpopup=photo
-this.popupVisible=true
-        }
+// this.currentPhoto=photo
+// this.dialogVisible=true
+//         }
   }
  }
   </script>
