@@ -1,7 +1,7 @@
 <template>
    <v-container>
     photo
-     <PhotoForm @addPhoto="addPhoto"/>
+     <PhotoForm/>
     <v-row>
       <ThePhoto
       v-for="photo in $store.getters.getAllPhotos"
@@ -30,9 +30,9 @@ import PopupShow from '@/components/PopupShow.vue';
   },
   methods:{
 
-        addPhoto(photo){
-this.photos.push(photo)
-        },
+//         addPhoto(photo){
+// this.photos.push(photo)
+//         },
 //         openPopup(photo){
           
 // this.currentPhoto=photo

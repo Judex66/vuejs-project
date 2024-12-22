@@ -21,6 +21,7 @@ export default{
 
     computed:{
         fullTitle(){
+            
             return `Тест полного названия - ${this.$store.getters.setCurrentPhoto.title}` 
         }
     }

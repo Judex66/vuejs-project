@@ -12,13 +12,17 @@ export default{
         },
         showDialog(state){
             state.dialogVisible=true
-            
+            console.log(state.dialogVisible)
         },
         hideDialog(state){
         state.dialogVisible=false
+        console.log(state.dialogVisible)
         },
         setCurrentPhoto(state,payload){
         state.currentPhoto=payload
+        },
+        addPhoto(state, payload){
+            state.photos.push(payload)
         }
     },
     getters:{
@@ -28,13 +32,12 @@ export default{
         getDialogVisible:(state)=>state.dialogVisible,
 
         getCurrectPhoto:(state)=>{state.currentPhoto
-            
         }
         
     },
     actions:{
         fetchPhotos(content){
-            axios.get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+            axios.get('https://jsonplaceholder.typicode.com/photos?_limit=10')
             .then(response=>content.commit('setPhotos', response.data))
         }
     },

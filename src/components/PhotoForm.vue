@@ -22,7 +22,8 @@ export default{
                     title:this.title,
                     url:reader.result
                 }
-                this.$emit('addPhoto',photo)
+                // this.$emit('addPhoto',photo)
+                this.$store.commit('addPhoto',photo)
             }
             reader.readAsDataURL(this.img)
         }
