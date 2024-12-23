@@ -26,7 +26,7 @@ export default{
             state.photos.push(payload)
         },
         updateData(state,payload){
-            this.$set(state.photos.id,"age", payload)
+            this.$set(state.photos.id, "age", payload)
         }
 
     },

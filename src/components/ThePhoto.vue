@@ -23,7 +23,6 @@ export default{
     methods:{
         openPopup(){
            this.$store.commit('setCurrentPhoto',this.photo)
-           console.log(this.photo)
            this.$store.commit('showDialog')
         }
     }
