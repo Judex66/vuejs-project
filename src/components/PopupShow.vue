@@ -7,7 +7,7 @@
     >
     <v-card>
     <v-card-title>
-{{ $store.getters.getCurrectPhoto.title }}
+{{ fullTitle }}
     </v-card-title>
     <v-card-text>
         <v-img 

@@ -36,7 +36,6 @@ export default{
         },
         getCurrectPhoto:(state)=>state.currentPhoto,
         getDialogVisible:(state)=>state.dialogVisible,
-        
     },
     actions:{
         fetchPhotos(content){
